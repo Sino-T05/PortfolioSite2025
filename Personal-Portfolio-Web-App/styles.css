@@ -1,0 +1,183 @@
+.gradient-text {
+    background: linear-gradient(
+        to right,
+        #ff0000,
+        #ff8000,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #8000ff,
+        #ff0080
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+    to {
+        background-position: 200% center;
+    }
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460, #e94560);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block; /* Adjust as needed */
+    border: 10px solid transparent; /* Adjust thickness */
+    border-radius: 50%; /* Make the frame circular */
+    padding: 5px; /* Space between the frame and the picture */
+    background: linear-gradient(45deg, #ff6b6b, #f7d94c, #6bff6b, #6bb3ff, #ff6bb3); /* Colorful gradient */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.profile-picture {
+    border-radius: 50%; /* Ensure the profile picture is circular */
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    display: block; /* Remove any inline spacing */
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Adjust size for the dot ring */
+    height: 200%; /* Adjust size for the dot ring */
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0) 30%),
+                radial-gradient(circle, rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0) 30%),
+                radial-gradient(circle, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0) 30%);
+    animation: rotate 5s linear infinite;
+    z-index: 0; /* Ensure the dots are below the profile picture */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (min-width: 768px) { /* Adjust the min-width as needed for your breakpoint */
+    .about-me {
+        height: 800px; /* Set the desired height for desktop */
+        /* You can also use min-height if you want it to be flexible */
+        /* min-height: 800px; */
+    }
+}
+
+.project-card {
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    margin: 20px; /* Space between cards */
+    background-color: #fff; /* Background color of the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Move the card up and scale it */
+    box-shadow: 0 0 20px rgba(21, 188, 152, 0.8), 0 0 30px rgba(21, 188, 152, 0.6); /* Green glow effect */
+    animation: float 3s ease-in-out infinite; /* Keep the float animation */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+} 
+
+
+.social-media-link {
+    display: inline-block;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.social-media-link.facebook {
+    border-color: #3b5998;
+    color: #3b5998;
+}
+
+.social-media-link.twitter {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+}
+
+.social-media-link.instagram {
+    border-color: #E1306C;
+    color: #E1306C;
+}
+
+.social-media-link.linkedin {
+    border-color: #0077B5;
+    color: #0077B5;
+}
+
+.social-media-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.social-media-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.social-media-link:hover::before {
+    width: 200%;
+    height: 200%;
+}

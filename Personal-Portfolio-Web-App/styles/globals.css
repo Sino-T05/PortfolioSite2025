@@ -1,0 +1,76 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* For Safari support */
+@supports (-webkit-overflow-scrolling: touch) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Hide animation elements initially */
+.animate-on-scroll {
+  opacity: 0;
+}
+
+/* Show animation elements when they have the animate-in class */
+.animate-in {
+  opacity: 1;
+}
+
+/* Base section styles */
+.section {
+  opacity: 0;
+}
+
+.wave-text {
+  display: inline-block;
+  animation: wave 1s infinite;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 1), rgba(0, 255, 0, 1), rgba(0, 0, 255, 1));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.project-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project-card {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.animate-float {
+  animation: float 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+} 
